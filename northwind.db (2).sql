@@ -1,0 +1,18 @@
+--Select * from products 
+--where supplierid in (1,2,3,4) Or supplierid = 5 
+--select * from products 
+--where supplierid in (1,2,3) or supplierid = 5
+--select * from product 
+--where productname = 'chang' or  productname = 'aniseed syrup'
+--select * from products 
+--where supplierid = 3 or unitprice >10 
+--select productname,unitprice from Products
+--select productname from products 
+--where upper ( productname) like'%C%'
+--select product name from products
+--where productname like 'n%' and not productname like '%n%'
+--select * from products 
+--where unitsinstock > 50
+--select min(unitprice) as lowest, max(unitprice) as highest from Products
+--select * from products 
+--where productname like '%spice%'
