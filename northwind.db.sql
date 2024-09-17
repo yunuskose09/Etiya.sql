@@ -1,0 +1,20 @@
+--select * from Products
+--where supplierid between 1 and 5 
+--select * from Products 
+--here supplierid in (1,2,3,4) or 5 
+--select productname from Products
+--where productname like 'Chang' or productname like 'Aniseed Syrup' 
+--Select * from products 
+--where supplierid=3 or supplierid >10
+--select productname ||'-'|| unitprice || 'TL'AS"ÜRÜN ve FİYATLAR" from Products
+--select productname from Products
+--where upper(productname) like '%C%'
+--select productname from Products
+--where productname like 'n%'
+--and productname not like '%n%'
+--select productname,unitprice from Products
+--where unitprice= (select max(unitprice) from products)
+--select productname,unitprice from Products
+--where unitprice= (select min(unitprice) from Products)
+--select productname from products 
+--where productname like'%spice%'
