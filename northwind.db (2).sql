@@ -1,18 +1,147 @@
+--select * from Products
+--where supplierid between 1 and 5 
+--select * from Products 
+--where supplierid in (1,2,3,4) or 5 
+--select productname from Products
+--where productname like 'Chang' or productname like 'Aniseed Syrup' 
 --Select * from products 
---where supplierid in (1,2,3,4) Or supplierid = 5 
---select * from products 
---where supplierid in (1,2,3) or supplierid = 5
---select * from product 
---where productname = 'chang' or  productname = 'aniseed syrup'
---select * from products 
---where supplierid = 3 or unitprice >10 
+--where supplierid=3 or supplierid >10
+--select productname ||'-'|| unitprice || 'TL'AS"ÜRÜN ve FİYATLAR" from Products
+--select productname from Products
+--where upper(productname) like '%C%'
+--select productname from Products
+--where productname like 'n%'
+--and productname not like '%n%'
 --select productname,unitprice from Products
+--where unitprice= (select max(unitprice) from products)
+--select productname,unitprice from Products
+--where unitprice= (select min(unitprice) from Products)
 --select productname from products 
---where upper ( productname) like'%C%'
---select product name from products
---where productname like 'n%' and not productname like '%n%'
---select * from products 
---where unitsinstock > 50
---select min(unitprice) as lowest, max(unitprice) as highest from Products
---select * from products 
---where productname like '%spice%'
+--where productname like'%spice%'
+--select * from Products
+--where unitprice>100
+--select productname as 'ürün adı',unitprice as 'tl' from Products
+--select count (productid) from Products
+--select avg(unitprice) from Products
+--select sum(unitprice) from Products
+--select DISTINCT(country) from Customers
+--select * from Customers
+--where country='France'
+--select orderid,shipname,shipcity,shippostalcode from orders 
+--where employeeid>5
+--select * from Customers
+--where country='Germany'
+--and city='Berlin'
+--select * from customers 
+--where country='Spain'
+--and contacttitle='Accounting Manager'
+--select * from customers 
+--where country='Germany' or country='Spain'
+--select * from customers where country='Germany'  and not city='Berlin'
+--select country from customers order by country desc 
+--select companyname,country from customers order by country asc, companyname desc 
+--select * from customers where country='Germany' order by city asc, contactname desc 
+--select * from Customers where companyname like'a%'
+--select * from customers where companyname like '%b'
+--select * from customers where companyname like '_e%'
+--select * from customers where companyname like 'a%e'
+--select * from Customers where country in ('Germany','France','Argentina') order by country asc 
+--select * from Customers where country not  in ('Germany','France','Argentina') order by country asc 
+--select * from customers where country in ( select country from customers where customerid='FRANK') 
+--select * from products where unitprice between 20 and 80 order by unitprice asc 
+--select companyname as şirket_adi, contactname as [iletişim ismi] from customers 
+--select * from  'Order Details'
+--where unitprice * quantity - discount > 1000
+--select distinct city,companyname from Customers 
+--where city is not NULL
+--select count (DISTINCT (city)) from customers 
+--where city is not null 
+--select country as 'Ülke', count (distinct city ) as 'Benzersiz Şehir' from customers 
+--where city is not null 
+--group by country 
+--order by  count(distinct city) desc  
+--select contactname ||'-'|| city from customers 
+--select distinct concat(contactname,'-',city) from customers
+--select country as 'Ülke', count(distinct city) as 'Benzersiz Şehir' from customers 
+--group by country 
+--having count (distinct city) >=3
+--order by count(distinct city) desc
+--select * from customers 
+--limit 4 
+--select * from Products
+--order by unitprice desc 
+--limit 3
+--select * from Products
+--order by unitprice desc 
+--limit 5
+--OFFSET 0
+--select * from Products
+--order by unitprice desc 
+--limit 5
+--OFFSET 5 * 3 
+--select * from Customers
+--order by country desc,city asc 
+--select concat (firstname,' ',lastname) as 'İsim Soyisim' from Employees
+--select concat(firstname,' ',lastname) as Fullname from Employees
+--order by fullname 
+--select * from Products
+--order by 
+--case when unitsinstock = 0 then 1
+--else 0
+--end , productname
+--select * from Products
+--order by 
+--case when unitsinstock = 0 then 2
+--when categoryid = 1 then 1
+--else 0
+--end , productname
+--select concat(firstname, ' ', lastname) as [İsim Soyisim] from Employees
+--order by [İsim Soyisim]
+--2.gün workshop>>
+--1)   select count(categoryid) from Products
+--2)  select * from products 
+--order by unitprice desc 
+--limit 5 
+--3)  select avg(unitprice) from Products
+--group by supplierid
+--4)  selecet categoryid, AVG(unitprice) AS ortalama_fiyat
+--FROM Products
+--WHERE unitprice > 100
+--GROUP BY categoryid
+--5)  select * from 'order details'
+--where unitprice * quantity > 1000
+--6)  select * from orders 
+--order by shippeddate desc 
+--limit 10
+--7)  select avg (unitprice) as ortalama_fiyat from Products
+--8)  select SUM(unitsinstock) AS toplam_stok
+--FROM Products
+--WHERE unitprice > 50;
+--9)  select MIN(orderdate) AS ilk_siparis
+--FROM Orders
+--10)  select EmployeeID, (strftime('%Y', 'now') - strftime('%Y', HireDate)) AS kaç_yıl_oldu
+--FROM Employees
+--11)  select orderid, round(sum(unitprice)) as toplam_birim_fiyat from 'order details'
+--group by orderid
+--12)  select count(*) as ürün_sayısı from Products
+--where unitsinstock>0
+--13)  select min(unitprice),max(unitprice) from Products
+--14)  select  STRFTIME('%Y', OrderDate) AS OrderYear, COUNT(*) AS OrderCount
+--FROM Orders
+--GROUP BY orderyear 
+--15)  select firstname ||' '|| lastname as isim_soyisim from Employees
+--16)  select city, length(city) as city_name_length from Customers
+--17)  select productname, round(unitprice,2) as rounded_price from Products
+--18)  select count(*) as total_orders from orders 
+--19)  select categoryid, avg(unitprice) as ortalama_fiyat from Products
+--group by categoryid
+--20)  select (COUNT(CASE WHEN shippeddate IS NULL THEN 1 END) * 100.0 / COUNT(*)) AS teslim_edilmeyen
+--FROM Orders 
+--21)  select MAX(unitprice) AS highest_price, MAX(unitprice) * 1.10 AS updated_price from Products
+--22)  select productname, SUBSTRING(productname, 1, 3) FROM Products
+--23)  select strftime('%Y', OrderDate) AS OrderYear, strftime('%m', OrderDate) AS OrderMonth,  COUNT(*) AS Ordercount FROM Orders
+--GROUP BY strftime('%Y', OrderDate), strftime('%m', OrderDate)
+--ORDER BY OrderYear, OrderMonth
+--24)  SELECT OrderID, round(sum(unitprice * quantity),2) as total_order_price from 'order details'
+--group by orderid
+--25)  select sum(unitprice) from Products where unitsinstock=0
